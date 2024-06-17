@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>個人網站</title>
+    <style>
+        :root {
+            --base-font-size: 20px;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fffaf0;
+            color: #333;
+            font-size: var(--base-font-size);
+            transition: font-size 0.3s ease;
+        }
+        header {
+            background-color: #ffccd5;
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            background-color: #ffb3c1;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            z-index: 1000;/
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #333;
+            font-size: calc(var(--base-font-size) + 2px);
+        }
+        section {
+            padding: 40px 20px;
+            margin-top: 120px;
+            margin-bottom: 20px;
+        }
+        .content {
+            max-width: 800px;
+            margin: auto;
+            text-align: center;
+        }
+        .profile-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        .profile-pic {
+            max-width: 200px;
+            height: auto;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+        }
+        .profile-pic:hover {
+            transform: scale(1.2);
+        }
+        footer {
+            background-color: #ffccd5;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            font-size: calc(var(--base-font-size) - 2px);
+        }
+        .font-size-controls {
+            position: fixed;
+            top: 50%;
+            right: 20px;
+            transform: translateY(-50%);
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 10px;
+            border-radius: 5px;
+            z-index: 1000;
+        }
+        .font-size-controls label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .font-size-controls input {
+            width: 100px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>MY PAGE</h1>
+    </header>
+    <div class="font-size-controls">
+        <label for="font-size-range">文字大小:</label>
+        <input type="range" id="font-size-range" min="14" max="36" value="20">
+    </div>
+    <nav>
+        <a href="#about">自我介紹</a>
+        <a href="#education">學歷</a>
+        <a href="#contact">聯絡方式</a>
+    </nav>
+    <section id="about">
+        <div class="content">
+            <h2>自我介紹</h2>
+            <div class="profile-section">
+                <img src="me-5.jfif" alt="你的照片" class="profile-pic">
+                <p>您好，我是林愛蓁，是一名設計系學生。我對設計充滿熱情，喜歡將創意轉化為實際作品。在設計之外，我的興趣包括跳舞、聽音樂和看電影，這些愛好豐富了我的生活，也給了我設計靈感。</p>
+            </div>
+        </div>
+    </section>
+    <section id="education">
+        <div class="content">
+            <h2>學歷</h2>
+            <p>大同大學媒體設計系互動媒體組</p>
+        </div>
+    </section>
+    <section id="contact">
+        <div class="content">
+            <h2>聯絡方式</h2>
+            <p>電子郵件: <a href="mailto:exl050819@gmail.com">exl050819@gmail.com</a></p>
+            <p>社交媒體: <a href="https://www.instagram.com/_gpl._.0819?igsh=Mm5mZHBxbGJqaW4w&utm_source=qr" target="_blank">IG</a>, <a href="https://www.facebook.com/share/qmW1cmBrvyD9ga6S/?mibextid=LQQJ4d" target="_blank">Facebook</a></p>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; Hi is Erica</p>
+    </footer>
+
+    <script>
+        const fontSizeRange = document.getElementById('font-size-range');
+        const root = document.querySelector(':root');
+
+        fontSizeRange.addEventListener('input', function() {
+            const newSize = fontSizeRange.value + 'px';
+            root.style.setProperty('--base-font-size', newSize);
+        });
+    </script>
+</body>
+</html>
